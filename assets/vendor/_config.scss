@@ -1,0 +1,135 @@
+@import '_vars.scss';
+// FLEX
+.flex {
+    display: flex;
+}
+.f-jcsb {
+    display: flex;
+    justify-content: space-between;
+}
+.f-center {
+    display: flex;
+    align-items: center;
+}
+.f-jcsb-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.f-center-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.f-dc{
+    display: flex;
+    flex-direction: column;
+}
+.f-dc-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.f-dc-center-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+// IMAGE
+.img-cover{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+.img-contain{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    pointer-events: none;
+}
+
+// BTN
+.btn{
+    position: relative;
+    transition: $anim-default;
+    border-radius: 5px;
+    width: 194px;
+    padding: 15px 42px;
+    &::before {
+        border-radius: 5px;
+        content: '';
+        transform: skewX(-10deg);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, #FFA756 0%, #FF9432 100%);
+        z-index: -1;
+    }
+    &::after {
+        content: '';
+        transform: skewX(-10deg);
+        position: absolute;
+        left: 1px;
+        top: 1px;
+        width: calc(100% - 2px);
+        height: calc(100% - 2px);
+        z-index: 0;
+        transition: $anim-default;
+        background: #181818;
+        border-radius: 5px;
+    }
+    span {
+        transition: $anim-default;
+        display: inline-block;
+        font-family: 'Gilroy Semibold';
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        color: #fff;
+        z-index: 2;
+        position: relative;
+    }
+    &:hover {
+        &::after {
+            opacity: 0;
+        }
+    }
+}
+
+//TITLE
+.title{
+    font-size: 50px;
+    line-height: 140%;
+    font-family: 'Gilroy Extrabold';
+    font-weight: normal;
+    color: #222222;
+}
+
+.elem {
+    &-white {
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: url('../img/svg/elems.svg') center;
+        width: 100%;
+        height: 33px;
+    }
+    &-black {
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: url('../img/svg/elems-black.svg') center;
+        width: 100%;
+        height: 33px;
+    }
+}
